@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 @EqualsAndHashCode(of = "id")
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +22,7 @@ public class Employee {
     private String department;
     @Column(precision = 10, scale = 2)
     private BigDecimal salary;
+    @Column(unique = true, length = 20)
+    private String employeeNumber;
+
 }
