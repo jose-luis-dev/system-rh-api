@@ -5,7 +5,7 @@ import jakarta.validation.constraints.*;
 import java.math.BigDecimal;
 
 public record EmployeeRequestDTO (
-        @NotBlank(message = "Nombre de empleado obligatorio")
+        @NotBlank
         @Size(max = 100)
         String name,
         @Size(max = 50)

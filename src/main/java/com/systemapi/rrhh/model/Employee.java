@@ -24,5 +24,15 @@ public class Employee {
     private BigDecimal salary;
     @Column(unique = true, length = 20)
     private String employeeNumber;
+    
+
+    public void generateEmployeeNumber() {
+        if (this.id == null){
+            throw new IllegalStateException("No se puede generar el número de empleado sin un ID");
+        }
+        this.employeeNumber = String.format("EMP-%04d", this.id);
+    }
 
 }
+
+
