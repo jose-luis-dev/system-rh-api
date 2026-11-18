@@ -8,6 +8,9 @@ spring:
     serialization:
       INDENT_OUTPUT: true
 
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:3306/recursos_humanos_db?createDatabaseIfNotExist=true
+
 # --- LOGGING ----
 logging:
   level:
