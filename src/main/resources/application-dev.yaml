@@ -7,8 +7,6 @@ spring:
   jackson:
     serialization:
       INDENT_OUTPUT: true
-    deserialization:
-      fail-on-unknown-properties: true
 
 # --- LOGGING ----
 logging:
