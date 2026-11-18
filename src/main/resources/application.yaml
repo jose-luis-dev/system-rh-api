@@ -11,7 +11,7 @@ spring:
     active: ${SPRING_PROFILES_ACTIVE:dev}
 
   datasource:
-    url: jdbc:mysql://${DB_HOST}:3306/recursosHumanos_db?createDatabaseIfNotExist=true
+    url: jdbc:mysql://${DB_HOST}:3306/recursos_humanos_db?createDatabaseIfNotExist=true
     username: ${DB_USER_SQL}
     password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -19,9 +19,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+    deserialization:
+      fail-on-unknown-properties: true
 
 # --- FLYWAY ---
   flyway:
