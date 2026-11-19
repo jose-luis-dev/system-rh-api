@@ -2,6 +2,7 @@ package com.systemapi.rrhh.mapper;
 
 import com.systemapi.rrhh.dto.EmployeeRequestDTO;
 import com.systemapi.rrhh.dto.EmployeeResponseDTO;
+import com.systemapi.rrhh.dto.EmployeeUpdateRequestDTO;
 import com.systemapi.rrhh.model.Employee;
 import org.springframework.stereotype.Component;
 
@@ -25,5 +26,12 @@ public class EmployeeMapper {
                 .department(dto.department())
                 .salary(dto.salary())
                 .build();
+    }
+
+    // Actualiza entity existente con los datos de DTO
+    public void updateEntity(Employee employee, EmployeeUpdateRequestDTO dto){
+        employee.setName(dto.name());
+        employee.setDepartment(dto.department());
+        employee.setSalary(dto.salary());
     }
 }

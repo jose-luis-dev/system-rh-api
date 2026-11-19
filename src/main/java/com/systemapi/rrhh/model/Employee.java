@@ -1,6 +1,8 @@
 package com.systemapi.rrhh.model;
 
+import com.systemapi.rrhh.dto.EmployeeUpdateRequestDTO;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.*;
 
 import java.math.BigDecimal;

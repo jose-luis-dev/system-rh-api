@@ -2,6 +2,7 @@ package com.systemapi.rrhh.service;
 
 import com.systemapi.rrhh.dto.EmployeeRequestDTO;
 import com.systemapi.rrhh.dto.EmployeeResponseDTO;
+import com.systemapi.rrhh.dto.EmployeeUpdateRequestDTO;
 import com.systemapi.rrhh.exception.EmployeeNotFoundException;
 import com.systemapi.rrhh.mapper.EmployeeMapper;
 import com.systemapi.rrhh.model.Employee;
@@ -78,4 +79,15 @@ public class EmployeeService implements IEmployeeService {
         Employee employee = findEntityByNumber(employeeNumber);
         employeeRepository.delete(employee);
     }
+
+    // Actualizar empleado
+    @Override
+    @Transactional
+    public EmployeeResponseDTO updateEmployee(String employeeNumber, EmployeeUpdateRequestDTO requestDTO) {
+        Employee employee = findEntityByNumber(employeeNumber);
+        employeeMapper.updateEntity(employee, requestDTO);
+
+        return employeeMapper.toDTO(employee);
+    }
+
 }

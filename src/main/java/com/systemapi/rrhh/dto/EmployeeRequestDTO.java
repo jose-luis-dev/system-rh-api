@@ -5,13 +5,13 @@ import jakarta.validation.constraints.*;
 import java.math.BigDecimal;
 
 public record EmployeeRequestDTO (
-        @NotBlank
-        @Size(max = 100)
+        @NotBlank(message = "El nombre es obligatorio")
+        @Size(max = 100, message = "El nombre no puede superar los 100 caracteres")
         String name,
-        @Size(max = 50)
+        @Size(max = 50, message = "El departamento no puede superar los 50 caracteres")
         String department,
-        @NotNull
-        @Positive
-        @Digits(integer = 8, fraction = 2)
+        @NotNull(message = "El salario es obligatorio")
+        @Positive(message = "El salario debe ser mayor a cero")
+        @Digits(integer = 8, fraction = 2, message = "El formato del salario es inválido (máximo 8 enteros y 2 decimales)")
         BigDecimal salary) {
 }
