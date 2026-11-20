@@ -49,12 +49,14 @@ public class EmployeeController {
 
         return ResponseEntity.created(uri).body(responseDTO);
     }
-
+    
     // Eliminar empleado
     @DeleteMapping("/{employeeNumber}")
     public ResponseEntity<Void> deleteEmployee(@PathVariable String employeeNumber){
         employeeService.deleteEmployee(employeeNumber);
         return ResponseEntity.noContent().build();
     }
+
+
 
 }

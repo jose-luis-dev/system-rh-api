@@ -2,7 +2,6 @@ package com.systemapi.rrhh.service;
 
 import com.systemapi.rrhh.dto.EmployeeRequestDTO;
 import com.systemapi.rrhh.dto.EmployeeResponseDTO;
-import com.systemapi.rrhh.dto.EmployeeUpdateRequestDTO;
 
 import java.util.List;
 
@@ -13,5 +12,5 @@ public interface IEmployeeService {
     EmployeeResponseDTO createEmployee(EmployeeRequestDTO dto);
     void deleteEmployee(String employeeNumber);
 
-    EmployeeResponseDTO updateEmployee(String employeeNumber, EmployeeUpdateRequestDTO requestDTO);
+    EmployeeResponseDTO updateEmployee(String employeeNumber, EmployeeRequestDTO requestDTO);
 }
