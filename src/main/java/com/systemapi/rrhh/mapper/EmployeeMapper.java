@@ -26,4 +26,11 @@ public class EmployeeMapper {
                 .salary(dto.salary())
                 .build();
     }
+
+    // Actualiza entity existente con los datos de DTO
+    public void updateEntity(Employee employee, EmployeeRequestDTO dto){
+        employee.setName(dto.name());
+        employee.setDepartment(dto.department());
+        employee.setSalary(dto.salary());
+    }
 }

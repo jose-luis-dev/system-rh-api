@@ -11,4 +11,6 @@ public interface IEmployeeService {
     List<EmployeeResponseDTO> searchEmployeeByName(String name);
     EmployeeResponseDTO createEmployee(EmployeeRequestDTO dto);
     void deleteEmployee(String employeeNumber);
+
+    EmployeeResponseDTO updateEmployee(String employeeNumber, EmployeeRequestDTO requestDTO);
 }

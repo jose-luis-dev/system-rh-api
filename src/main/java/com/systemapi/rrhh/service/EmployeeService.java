@@ -78,4 +78,14 @@ public class EmployeeService implements IEmployeeService {
         Employee employee = findEntityByNumber(employeeNumber);
         employeeRepository.delete(employee);
     }
+
+    // Actualizar empleado
+    @Override
+    @Transactional
+    public EmployeeResponseDTO updateEmployee(String employeeNumber, EmployeeRequestDTO requestDTO) {
+        Employee employee = findEntityByNumber(employeeNumber);
+        employeeMapper.updateEntity(employee, requestDTO);
+        return employeeMapper.toDTO(employee);
+    }
+
 }
