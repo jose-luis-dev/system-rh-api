@@ -50,6 +50,14 @@ public class EmployeeController {
         return ResponseEntity.created(uri).body(responseDTO);
     }
     
+    // Actualizar empleado
+    @PutMapping("/{employeeNumber}")
+    public ResponseEntity<EmployeeResponseDTO> updateEmployee(
+            @PathVariable String employeeNumber,
+            @Valid @RequestBody EmployeeRequestDTO requestDTO){
+        EmployeeResponseDTO updated = employeeService.updateEmployee(employeeNumber, requestDTO);
+        return ResponseEntity.ok(updated);
+    }
     // Eliminar empleado
     @DeleteMapping("/{employeeNumber}")
     public ResponseEntity<Void> deleteEmployee(@PathVariable String employeeNumber){
