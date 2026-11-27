@@ -36,3 +36,9 @@ logging:
   level:
     root: INFO
     com.systemapi.rrhh: DEBUG
+
+
+# --- CORS ---
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:4200}
